@@ -2,7 +2,21 @@ def has_negatives(a):
     """
     YOUR CODE HERE
     """
-    # Your code here
+    # store positives in cache
+    cache = {}
+    result = []
+    for i in a:
+        # 0 has no negative
+        # abs returns absolute of number
+        if i == abs(i) and i != 0:
+            # key: -
+            # value: +
+            cache[-i] = i
+
+    # if negative in list
+    for i in a:
+        if i in cache:
+            result.append(cache[i])
 
     return result
 
